@@ -2,8 +2,8 @@
 
 namespace App\Repository;
 
+use App\Repository\RepositoryInterface;
 use GuzzleHttp\Exception\BadResponseException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -11,7 +11,6 @@ use App\Models\User;
 class AuthRepository extends BaseRepository implements RepositoryInterface
 {
     protected $model;
-    protected $modelMembership;
 
     public function __construct(User $model){
         $this->model = $model;
