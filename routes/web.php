@@ -13,6 +13,11 @@
 |
 */
 
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->post('/api/login', 'AuthController@login');
+$router->post('/api/register', 'AuthController@register');
+$router->post('/api/logout', 'AuthController@logout');
