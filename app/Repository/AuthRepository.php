@@ -67,6 +67,7 @@ class AuthRepository extends BaseRepository implements RepositoryInterface
             $payload = $request->all();
             $payload['password'] = Hash::make($payload['password']);
             $query = $this->create($payload);
+            $query->assignRole('user');
             
             $data = [
                 'user'  => $query,
