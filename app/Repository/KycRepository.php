@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Repository\RepositoryInterface;
 use GuzzleHttp\Exception\BadResponseException;
 use App\Models\Kyc;
+use App\Helpers\Helper;
 
 class AuthRepository extends BaseRepository implements RepositoryInterface
 {
@@ -14,8 +15,13 @@ class AuthRepository extends BaseRepository implements RepositoryInterface
         $this->model = $model;
     }
 
-    public function verification($request)
+    public function kycStep($request)
     {
-        
+        try{
+            $payload = $request->all();
+            
+        }catch(BadResponseException $e){
+            return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+        }
     }
 }

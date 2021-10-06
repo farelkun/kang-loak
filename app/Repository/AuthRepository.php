@@ -78,7 +78,7 @@ class AuthRepository extends BaseRepository implements RepositoryInterface
                 'values'    => $data,
                 'message'   => 'Register Successfully'
             ], 200);
-        }catch(\Exception $e){
+        }catch(BadResponseException $e){
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
@@ -93,7 +93,7 @@ class AuthRepository extends BaseRepository implements RepositoryInterface
                 'status'   => true,
                 'message'   => 'Logout Successfully'
             ], 200);
-        }catch(\Exception $e){
+        }catch(BadResponseException $e){
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }

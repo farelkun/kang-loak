@@ -23,7 +23,6 @@ class CreateKycTable extends Migration
             $table->string('selfie_id_card_attachment');
             $table->enum('approval', ['Approved', 'Not Approved']);
             $table->text('message');
-            $table->integer('step')->default(0);
             $table->timestamps();
         });
     }

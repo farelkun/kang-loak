@@ -14,8 +14,8 @@ class KycController extends Controller
         $this->kycRepository = $kycRepository;
     }
 
-    public function verification(KycRequest $request)
+    public function stepKyc(KycRequest $request)
     {
-        return $this->kycRepository->verification($request);   
+        return $this->kycRepository->stepKyc($request);   
     }
 }

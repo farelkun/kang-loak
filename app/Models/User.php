@@ -33,7 +33,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'password',
     ];
 
-    public function AauthAcessToken(){
-        return $this->hasMany('\App\OauthAccessToken');
+    public function step()
+    {
+    	return $this->hasOne(Kyc::class);
     }
 }
